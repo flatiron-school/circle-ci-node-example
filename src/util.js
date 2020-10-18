@@ -6,7 +6,7 @@
 
 function sumNegative(arr){
     let negatives =  arr.filter( x => x < 0)
-    let sumOfNegatives = 0
+    let sumOfNegatives = 5
     negatives.forEach( (x) => {
         sumOfNegatives += x
     })
