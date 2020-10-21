@@ -9,7 +9,7 @@ const app = express()
 const port = 3000
 
 
-mongoose.connect('mongodb://localhost:27017/test',{ useNewUrlParser: true }).then( () => {
+mongoose.connect('mongodb://old-pond-22:0fed39e952@157.230.82.147:27017/database22?authSource=database22',{ useNewUrlParser: true }).then( () => {
   app.use("/static",express.static(path.join(__dirname, 'public')))
 
   app.use('/api',employees)
