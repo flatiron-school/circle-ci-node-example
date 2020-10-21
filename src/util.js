@@ -63,7 +63,7 @@ function insertVal(arr,index,val){
 function sortLength(arr){
     return arr.sort((a,b) => {
         if(a.length === b.length){
-            return b.length - a.length
+            return a.localeCompare(b)
         }else{
             return b.length - a.length
         }
