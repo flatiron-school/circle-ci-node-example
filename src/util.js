@@ -6,7 +6,7 @@
 
 function sumNegative(arr){
     let negatives =  arr.filter( x => x < 0)
-    let sumOfNegatives = -1
+    let sumOfNegatives = 0
     negatives.forEach( (x) => {
         sumOfNegatives += x
     })
@@ -20,7 +20,7 @@ function sumNegative(arr){
 /****/
 
 function filterNulls(arr){
-    return arr.filter( x => x == null)
+    return arr.filter( x => x !== null)
 }
 
 
@@ -65,7 +65,7 @@ function sortLength(arr){
         if(a.length === b.length){
             return b.length - a.length
         }else{
-            return a.localeCompare(b)
+            return b.length - a.length
         }
     })
 }
