@@ -4,10 +4,10 @@
     Output: Returns the sum of all negative numbers in the array
 /****/
 
-function sumNegative(arr){
-    let negatives =  arr.filter( x => x < 0)
-    let sumOfNegatives = -1
-    negatives.forEach( (x) => {
+function sumNegative(arr) {
+    let negatives = arr.filter(x => x < 0)
+    let sumOfNegatives = 0
+    negatives.forEach((x) => {
         sumOfNegatives += x
     })
     return sumOfNegatives
@@ -19,8 +19,8 @@ function sumNegative(arr){
     Output: Returns a new array with all null values filtered out of the old array
 /****/
 
-function filterNulls(arr){
-    return arr.filter( x => x == null)
+function filterNulls(arr) {
+    return arr.filter(x => x !== null)
 }
 
 
@@ -29,8 +29,8 @@ function filterNulls(arr){
     Output: Returns a new array that has all of the old array values, but the first letter of each array element is capitalized
 /****/
 
-function capitalizeFirst(arr){
-    return arr.map( x => x[0].toUpperCase() + x.substring(1,x.length))
+function capitalizeFirst(arr) {
+    return arr.map(x => x[0].toUpperCase() + x.substring(1, x.length))
 }
 
 
@@ -39,8 +39,8 @@ function capitalizeFirst(arr){
     Output: Returns a new array with an index removed from an old array. All values after that index should slide down.
 /****/
 
-function removeIndex(arr, index){
-    return [...arr.slice(0,index),...arr.slice(index+1,arr.length)]
+function removeIndex(arr, index) {
+    return [...arr.slice(0, index), ...arr.slice(index + 1, arr.length)]
 }
 
 
@@ -50,8 +50,8 @@ function removeIndex(arr, index){
     Output: Returns a new array that is the old array with a value inserted at the specified index.
 /****/
 
-function insertVal(arr,index,val){
-    return [...arr.slice(0,index),val,...arr.slice(index,arr.length)]
+function insertVal(arr, index, val) {
+    return [...arr.slice(0, index), val, ...arr.slice(index, arr.length)]
 }
 
 
@@ -60,12 +60,12 @@ function insertVal(arr,index,val){
     Output: Returns a new array that is the old array sorted by string length descending. If two strings are the same length, the one that is alphanumberically higher should be placed first.
 /****/
 
-function sortLength(arr){
-    return arr.sort((a,b) => {
-        if(a.length === b.length){
-            return b.length - a.length
-        }else{
+function sortLength(arr) {
+    return arr.sort((a, b) => {
+        if (a.length === b.length) {
             return a.localeCompare(b)
+        } else {
+            return b.length - a.length
         }
     })
 }
@@ -77,7 +77,7 @@ function sortLength(arr){
     Output: Print a string that says 'This object has X properties'
 /****/
 
-function describeObject(obj){
+function describeObject(obj) {
     return `This object has ${Object.keys(obj).length} properties`
 }
 
@@ -86,9 +86,9 @@ function describeObject(obj){
     Output: Return new object with obj2's properties merged onto obj1. Any similar properties will take obj2's values.
 /****/
 
-function mergeObject(obj1,obj2){
+function mergeObject(obj1, obj2) {
     return {
-        ...obj1,...obj2
+        ...obj1, ...obj2
     }
 }
 
@@ -97,8 +97,8 @@ function mergeObject(obj1,obj2){
     Output: Return an array containing all of the values of the object that are 3 characters or less ( assume all object values are strings)
 /****/
 
-function objectValues(obj){
-    return Object.values(obj).filter( x => x.length <= 3)
+function objectValues(obj) {
+    return Object.values(obj).filter(x => x.length <= 3)
 }
 
 
@@ -107,7 +107,7 @@ function objectValues(obj){
     Output: Return a new array with containing objects from the old array with age < 18 and height >= 6.0
 /****/
 
-function getTall(arr){
+function getTall(arr) {
     return arr.filter(x => x.height > 6.0 && x.age < 18)
 }
 
