@@ -3,7 +3,7 @@ const starwars  = require('../src/starwars.js')
 
 describe("sumNegative", () => {
     test("sumNegative", () => {
-        expect(util.sumNegative([1,2,3,-4,6,-8,0])).toEqual(-12)
+        expect(util.sumNegative([1,2,3,-4,6,-8,0])).toEqual(-13)
     })
 })
 
